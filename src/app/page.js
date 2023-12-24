@@ -1,95 +1,69 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client"
+import { useRef, useState } from 'react'
+import styles from './page.module.scss'
+import CopyIcon from '@/icons/copyIcon';
 
 export default function Home() {
+
+  const [jsonData, setJsonData] = useState({ userInp: "", outputJson: "" })
+  const [copied, setCopied] = useState(false);
+  const contentRef = useRef(null);
+
+  const prettifyJson = () => {
+    try {
+      if (jsonData.userInp) {
+        const correctedInput = jsonData.userInp.replace(/([{,]\s*)([A-Za-z_][A-Za-z0-9_]*)\s*:/g, '$1"$2":');
+        const jsonObj = JSON.parse(correctedInput);
+        const prettifiedJson = JSON.stringify(jsonObj, null, 4);
+        setJsonData({ ...jsonData, outputJson: prettifiedJson });
+      } else {
+        setJsonData({ ...jsonData, outputJson: 'Enter json to formate' });
+      }
+    } catch (error) {
+      setJsonData({ ...jsonData, outputJson: 'Invalid JSON' });
+    }
+  }
+
+  const handleCopyClick = () => {
+    if (jsonData.userInp) {
+      if (contentRef.current) {
+        const tempTextarea = document.createElement('textarea');
+        tempTextarea.value = contentRef.current.textContent;
+
+        document.body.appendChild(tempTextarea);
+        tempTextarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextarea);
+
+        setCopied(true);
+
+        setTimeout(() => {
+          setCopied(false);
+        }, 1500);
+      }
+    } else {
+      setJsonData({ ...jsonData, outputJson: 'Enter json to formate' });
+    }
+  }
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className={styles["main-container"]}>
+      <div className={styles["header"]}>Welcome to JSON Formatter</div>
+      <div className={styles["json-container"]}>
+        <div className={styles["json-inputContainer"]}>
+          <textarea onChange={(e) => setJsonData({ ...jsonData, userInp: e.target.value })} placeholder='Enter Json here' />
+        </div>
+        <div className={styles["json-outputContainer"]}>
+          <div className={styles["copy-container"]}>
+            <CopyIcon classname={styles["copyIcon"]} click={handleCopyClick} />
+            {copied ? "Copied" : ""}
+          </div>
+          <pre ref={contentRef} className={styles["preJson"]}>{jsonData.outputJson}</pre>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className={styles["btn-container"]}>
+        <button className={styles["submit-btn"]} onClick={prettifyJson}>Prettify JSON</button>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   )
 }
