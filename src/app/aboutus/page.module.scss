@@ -19,6 +19,13 @@
         margin: 0 15px;
         cursor: pointer;
       }
+      @media only screen and (max-width: 850px) {
+        position: relative;
+      }
+    }
+    @media only screen and (max-width: 850px) {
+      flex-direction: column;
+      gap: 5px;
     }
   }
   .contains {
