@@ -6,6 +6,8 @@ const generateSitemap = async () => {
 
     // Add your dynamic URLs
     sitemapStream.write({ url: '/', changefreq: 'daily', priority: 1 });
+    sitemapStream.write({ url: '/aboutus', changefreq: 'daily', priority: 0.8 });
+    sitemapStream.write({ url: '/privacy-policy', changefreq: 'daily', priority: 0.9 });
     // Add more URLs as needed
 
     sitemapStream.end();

@@ -9,6 +9,17 @@
     font-size: 21px;
     font-weight: 500;
     padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    .rightContainer {
+      position: absolute;
+      right: 20px;
+      label {
+        font-size: 16px;
+        margin: 0 15px;
+        cursor: pointer;
+      }
+    }
   }
   .json-container {
     padding-top: 20px;

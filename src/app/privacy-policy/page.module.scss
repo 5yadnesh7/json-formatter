@@ -1,0 +1,45 @@
+.privacyContainer {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: #504c4c;
+  .header {
+    color: #beeb43;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 500;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    .rightContainer {
+      position: absolute;
+      right: 20px;
+      label {
+        font-size: 16px;
+        margin: 0 15px;
+        cursor: pointer;
+      }
+    }
+  }
+  .contains {
+    width: 70vw;
+    margin-left: 15vw;
+    color: #fff;
+    margin-top: 10vh;
+    font-size: 14px;
+    .container {
+      margin-top: 5vh;
+      .title {
+        color: #beeb43;
+        font-size: 21px;
+        font-weight: 600;
+      }
+      .desc {
+        .bold {
+          color: #beeb43;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

@@ -2,12 +2,14 @@
 import { useRef, useState } from 'react'
 import styles from './page.module.scss'
 import CopyIcon from '@/icons/copyIcon';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
 
   const [jsonData, setJsonData] = useState({ userInp: "", outputJson: "" })
   const [copied, setCopied] = useState(false);
   const contentRef = useRef(null);
+  const router = useRouter();
 
   const prettifyJson = () => {
     try {
@@ -48,7 +50,13 @@ export default function Home() {
 
   return (
     <div className={styles["main-container"]}>
-      <div className={styles["header"]}>Welcome to JSON Formatter</div>
+      <div className={styles["header"]}>
+        Welcome to JSON Formatter
+        <div className={styles["rightContainer"]}>
+          <label onClick={() => router.push("/aboutus")}>About us</label>
+          <label onClick={() => router.push("/privacy-policy")}>Privacy Policy</label>
+        </div>
+      </div>
       <div className={styles["json-container"]}>
         <div className={styles["json-inputContainer"]}>
           <textarea onChange={(e) => setJsonData({ ...jsonData, userInp: e.target.value })} placeholder='Enter Json here' />
