@@ -93,11 +93,11 @@ export default function Home() {
         </div>
         <div className={styles["container"]}>
           <label className={styles["title"]}>Explore the Power of JSONease</label>
-          <p className={styles["desc"]}>Why settle for ordinary when you can have extraordinary? Our platform goes beyond mere formatting – it's a playground for those who want to elevate their coding experience. With JSONease, jsonease becomes second nature, and the json formatter is your trusted companion in presenting your data with precision and style.</p>
+          <p className={styles["desc"]}>Why settle for ordinary when you can have extraordinary? Our platform goes beyond mere formatting – it&apos;s a playground for those who want to elevate their coding experience. With JSONease, jsonease becomes second nature, and the json formatter is your trusted companion in presenting your data with precision and style.</p>
         </div>
         <div className={styles["container"]}>
           <label className={styles["title"]}>Unleash the Potential</label>
-          <p className={styles["desc"]}>Choose JSONease for an unparalleled journey into the world of jsonease and sophisticated json formatting. Elevate your coding game, simplify your workflow, and let your JSON data shine. It's not just formatting; it's a revolution. Try JSONease today and witness the transformation.</p>
+          <p className={styles["desc"]}>Choose JSONease for an unparalleled journey into the world of jsonease and sophisticated json formatting. Elevate your coding game, simplify your workflow, and let your JSON data shine. It&apos;s not just formatting; it&apos;s a revolution. Try JSONease today and witness the transformation.</p>
         </div>
       </div>
     </div>
