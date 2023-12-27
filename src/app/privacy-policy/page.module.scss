@@ -1,5 +1,6 @@
 .privacyContainer {
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100%;
   width: 100vw;
   box-sizing: border-box;
   background-color: #504c4c;
@@ -33,6 +34,7 @@
     margin-left: 15vw;
     color: #fff;
     margin-top: 10vh;
+    margin-bottom: 5vh;
     font-size: 14px;
     .container {
       margin-top: 5vh;
@@ -45,6 +47,7 @@
         .bold {
           color: #beeb43;
           font-weight: 600;
+          cursor: pointer;
         }
       }
     }

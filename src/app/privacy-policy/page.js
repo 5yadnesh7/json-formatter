@@ -6,11 +6,15 @@ import { useRouter } from 'next/navigation';
 const PrivacyPolicy = () => {
 
     const router = useRouter();
+    const domainName = typeof window !== "undefined" && window?.location?.origin
+    const handleRedirect = () => {
+        window.location.href = domainName
+    }
 
     return (
         <div className={styles["privacyContainer"]}>
             <div className={styles["header"]}>
-                Welcome to JSON Formatter
+                <h1>Welcome to JSON Formatter</h1>
                 <div className={styles["rightContainer"]}>
                     <label onClick={() => router.push("/")}>Home</label>
                     <label onClick={() => router.push("/aboutus")}>About us</label>
@@ -20,7 +24,7 @@ const PrivacyPolicy = () => {
                 <div className={styles["container"]}>
                     <label className={styles["title"]}>Privacy Policy</label>
                     <p className={styles["desc"]}>
-                        JSON Formatter (&quot;us,&quot; &quot;we,&quot; or &quot;our&quot;) operates the <span className={styles["bold"]}>{typeof window !== "undefined" && window?.location?.origin}</span> website (the &quot;Service&quot;).
+                        JSON Formatter (&quot;us,&quot; &quot;we,&quot; or &quot;our&quot;) operates the <span className={styles["bold"]} onClick={handleRedirect}>{domainName}</span> website (the &quot;Service&quot;).
                     </p>
                     <p className={styles["desc"]}>
                         This page outlines our privacy policy and how we handle user data.
