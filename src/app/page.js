@@ -64,7 +64,7 @@ export default function Home() {
   return (
     <div className={styles["main-container"]}>
       <div className={styles["header"]}>
-        <h1>JSON Formatter</h1>
+        <h1>JSON Formatter and Prettier</h1>
         <div className={styles["rightContainer"]}>
           <label onClick={() => router.push("/aboutus")}>About us</label>
           <label onClick={() => router.push("/privacy-policy")}>Privacy Policy</label>
@@ -84,12 +84,12 @@ export default function Home() {
       </div>
       <div className={styles["contains"]}>
         <div className={styles["container"]}>
-          <label className={styles["title"]}>Welcome to JSONease: Simplifying JSON Formatting for Ultimate Clarity</label>
-          <p className={styles["desc"]}>Are you tired of wrestling with messy JSON code? Look no further-JSONease is your all-in-one solution, seamlessly combining the power of jsonease and a robust json formatter.</p>
+          <label className={styles["title"]}>Welcome to JSONease: Simplifying JSON Formatting and Prettify for Ultimate Clarity</label>
+          <p className={styles["desc"]}>Are you tired of wrestling with messy JSON code? Look no further-JSONease is your all-in-one solution, seamlessly combining the power of jsonease and a robust json formatter and Prettier.</p>
         </div>
         <div className={styles["container"]}>
           <label className={styles["title"]}>Effortless JSON Beautification</label>
-          <p className={styles["desc"]}>At JSONease, we pride ourselves on providing developers with a straightforward and efficient tool for jsonease. Our advanced json formatter is designed to transform your raw JSON data into elegantly structured, easy-to-read formats, ensuring your code not only functions flawlessly but also looks good doing it.</p>
+          <p className={styles["desc"]}>At JSONease, we pride ourselves on providing developers with a straightforward and efficient tool for jsonease. Our advanced json formatter and Prettier is designed to transform your raw JSON data into elegantly structured, easy-to-read formats, ensuring your code not only functions flawlessly but also looks good doing it.</p>
         </div>
         <div className={styles["container"]}>
           <label className={styles["title"]}>Explore the Power of JSONease</label>
