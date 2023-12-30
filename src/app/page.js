@@ -64,7 +64,7 @@ export default function Home() {
   return (
     <div className={styles["main-container"]}>
       <div className={styles["header"]}>
-        <h1>Welcome to JSON Formatter</h1>
+        <h1>JSON Formatter</h1>
         <div className={styles["rightContainer"]}>
           <label onClick={() => router.push("/aboutus")}>About us</label>
           <label onClick={() => router.push("/privacy-policy")}>Privacy Policy</label>
@@ -98,6 +98,10 @@ export default function Home() {
         <div className={styles["container"]}>
           <label className={styles["title"]}>Unleash the Potential</label>
           <p className={styles["desc"]}>Choose JSONease for an unparalleled journey into the world of jsonease and sophisticated json formatting. Elevate your coding game, simplify your workflow, and let your JSON data shine. It&apos;s not just formatting; it&apos;s a revolution. Try JSONease today and witness the transformation.</p>
+        </div>
+        <div className={styles["container"]}>
+          <label className={styles["title"]}>Revolutionizing Coding with Advanced JSON Formatting</label>
+          <p className={styles["desc"]}>Experience a coding revolution with JSONease, combining the prowess of jsonease and a robust JSON formatter. Say goodbye to messy JSON code as our platform goes beyond formatting, offering a dynamic playground for developers seeking to elevate their coding game. JSONease transforms raw data effortlessly into structured, easy-to-read formats. Explore advanced features like customizable themes, error detection, and interactive previews, putting you in complete control of your JSON code. It's more than just beautification; it's a coding revolution. Integrate seamlessly into your workflow with our API and extensions. Try JSONease and witness how this powerful JSON formatter transforms not just your code but your entire coding experience, providing clarity and precision in every line.</p>
         </div>
       </div>
     </div>

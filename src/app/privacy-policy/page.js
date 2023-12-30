@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
     return (
         <div className={styles["privacyContainer"]}>
             <div className={styles["header"]}>
-                <h1>Welcome to JSON Formatter</h1>
+                <h1>JSON Formatter</h1>
                 <div className={styles["rightContainer"]}>
                     <label onClick={() => router.push("/")}>Home</label>
                     <label onClick={() => router.push("/aboutus")}>About us</label>
