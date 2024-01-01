@@ -1,6 +1,5 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-// import GoogleAnalitics from '@/Components/googleAnalitics'
 import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -26,7 +25,6 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
       <body className={inter.className}>
-        {/* <GoogleAnalitics /> */}
         <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSF4R9P3" height="0" width="0" style="display: none; visibility: hidden;"></iframe>`,
