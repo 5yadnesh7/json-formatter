@@ -1,13 +1,14 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
+import CanonicalURL from '@/components/canonical'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Your Ultimate JSON Formatter for Elegant Data Presentation',
+  title: 'JSON Stringify, JSON Formatter and JSON Prettier',
   description: 'Efficiently format JSON with our tool where structure meets simplicity. Elevate code readability and efficiency using our intuitive JSON formatter and prettifier.',
-  keywords: "JSON formatter, JSONformatter, JSONease, JSON ease, JSON beautifier, online JSON formatter, format JSON, JSON prettifier, pretty print JSON, JSON indentation, JSON syntax highlighter, JSON structure enhancer, JSON code readability, JSON editor, JSON validation, JSON minifier, JSON formatting tool, code beautification, developer tool",
+  keywords: "JSON Stringify, JSON Stringify online, JSON formatter, JSON formatter online, JSONformatter, JSONease, JSON ease, JSON beautifier, online JSON formatter, format JSON, JSON prettifier, pretty print JSON, JSON indentation, JSON syntax highlighter, JSON structure enhancer, JSON code readability, JSON editor, JSON validation, JSON minifier, JSON formatting tool, code beautification, developer tool",
 }
 
 export default function RootLayout({ children }) {
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
             })(window,document,'script','dataLayer','GTM-WSF4R9P3');
           `}
         </Script>
+        <CanonicalURL />
       </head>
       <body className={inter.className}>
         <noscript

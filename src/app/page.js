@@ -64,7 +64,7 @@ export default function Home() {
   return (
     <div className={styles["main-container"]}>
       <div className={styles["header"]}>
-        <h1>JSON Formatter and Prettier</h1>
+        <h1>JSON Stringify, Formatter and Prettier</h1>
         <div className={styles["rightContainer"]}>
           <label onClick={() => router.push("/aboutus")}>About us</label>
           <label onClick={() => router.push("/privacy-policy")}>Privacy Policy</label>

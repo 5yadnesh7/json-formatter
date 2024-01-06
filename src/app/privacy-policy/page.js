@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
     return (
         <div className={styles["privacyContainer"]}>
             <div className={styles["header"]}>
-                <h1>JSON Formatter</h1>
+                <h1>JSON Stringify, Formatter and Prettier</h1>
                 <div className={styles["rightContainer"]}>
                     <label onClick={() => router.push("/")}>Home</label>
                     <label onClick={() => router.push("/aboutus")}>About us</label>
@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
                 <div className={styles["container"]}>
                     <label className={styles["title"]}>Privacy Policy</label>
                     <p className={styles["desc"]}>
-                        JSON Formatter (&quot;us,&quot; &quot;we,&quot; or &quot;our&quot;) operates the <span className={styles["bold"]} onClick={handleRedirect}>{domainName}</span> website (the &quot;Service&quot;).
+                        JSON Formatter (&quot;us,&quot; &quot;we,&quot; or &quot;our&quot;) operates the <span className={styles["bold"]} onClick={handleRedirect}>{domainName}/</span> website (the &quot;Service&quot;).
                     </p>
                     <p className={styles["desc"]}>
                         This page outlines our privacy policy and how we handle user data.
